@@ -7,7 +7,7 @@ import { ConfigTypes } from "@spt/models/enums/ConfigTypes";
 import type { IRagfairConfig } from "@spt/models/spt/config/IRagfairConfig";
 import type { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import type { References } from "../Utils/References";
-import { AllItemList, CurrencyIDs, HandbookIDs, SlotsIDs, TradersIDs } from "./GenEnums";
+import { AllItemList, HandbookIDs, SlotsIDs } from "./GenEnums";
 
 import * as fs from "node:fs";
 import * as path from "node:path";
@@ -88,10 +88,6 @@ export class ItemGenerator {
                     itemConfig.QuestPush.QuestTargetConditionToClone,
                     newId,
                 );
-            }
-
-            if (itemConfig.AddToTrader !== undefined) {
-                this.addToTrader(itemConfig, newId);
             }
 
             this.buildCustomPresets(itemConfig, newId);
@@ -444,38 +440,6 @@ export class ItemGenerator {
             }
         }
     }
-
-    private addToTrader(itemConfig: CustomItemFormat[string], itemID: string) {
-        const tables = this.ref.tables;
-        const tempTraderInfo = TradersIDs[itemConfig.AddToTrader?.TraderId] || itemConfig.AddToTrader?.TraderId;
-        const traderInfo = tempTraderInfo;
-        const trader = tables.traders[traderInfo];
-        const tempCurrencyInfo = CurrencyIDs[itemConfig.AddToTrader?.Currency] || itemConfig.AddToTrader?.Currency;
-        const currencyInfo = tempCurrencyInfo;
-
-        const assortItem = {
-            _id: this.ref.hashUtil.generate(),
-            _tpl: itemID,
-            parentId: "hideout",
-            slotId: "hideout",
-            upd: {
-                UnlimitedCount: itemConfig.AddToTrader?.UnlimitedCount,
-                StackObjectsCount: itemConfig.AddToTrader?.StackObjectsCount,
-            },
-        };
-
-        trader.assort.items.push(assortItem);
-
-        trader.assort.barter_scheme[itemID] = [];
-        trader.assort.barter_scheme[itemID].push([
-            {
-                count: itemConfig.AddToTrader?.Cost,
-                _tpl: currencyInfo,
-            },
-        ]);
-
-        trader.assort.loyal_level_items[itemID] = itemConfig.AddToTrader?.LoyaltyLevel;
-    }
     //#endregion
     //
     //
@@ -640,14 +604,6 @@ export interface CustomItemFormat {
         QuestPush?: {
             QuestConditionType: string;
             QuestTargetConditionToClone: string;
-        };
-        AddToTrader?: {
-            TraderId: string;
-            Currency: string;
-            LoyaltyLevel: number;
-            Cost: number;
-            UnlimitedCount: boolean;
-            StackObjectsCount: number;
         };
         PushToFleaBlacklist?: boolean;
         CloneToFilters?: boolean;

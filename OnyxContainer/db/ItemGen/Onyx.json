@@ -80,14 +80,6 @@
             "HandbookParent": "SecureContainers",
             "HandbookPrice": 12999999
         },
-        "AddToTrader": {
-            "TraderId": "Saria",
-            "Currency": "Rub",
-            "LoyaltyLevel": 2,
-            "Cost": 2000000,
-            "UnlimitedCount": false,
-            "StackObjectsCount": 1
-        },
         "CloneToFilters": true,
         "PushToFleaBlacklist": true
     }

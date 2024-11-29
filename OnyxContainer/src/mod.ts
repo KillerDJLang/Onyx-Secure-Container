@@ -6,6 +6,8 @@ import { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
 
 import { ItemGenerator } from "./CustomItems/ItemGenerator";
+import { AssortUtils } from "./CustomItems/AssortUtils";
+import { TradersIDs, CurrencyIDs, AllItemList } from "./CustomItems/GenEnums";
 import { Logger } from "./Utils/Logger";
 import { References } from "./Utils/References";
 
@@ -35,7 +37,14 @@ class OnyxContainer implements IPreSptLoadMod, IPostDBLoadMod {
         }
 
         const itemGenerator = new ItemGenerator(this.ref);
+        const assortUtils = new AssortUtils(this.ref.hashUtil, this.ref.logger);
         itemGenerator.createCustomItems("../../db/ItemGen");
+        assortUtils.createSingleAssortItem("674a33573fef1c2943025680")
+                    .addStackCount(1)
+                    .addLoyaltyLevel(2)
+                    .addBarterCost(AllItemList["SECURE_KAPPA"], 1)
+                    .addBarterCost(CurrencyIDs["Rub"], 10000000)
+                    .export(this.ref.tables.traders[TradersIDs["Saria"]], false);
 
         this.logger.log("Saria has crafted a new secured container...use it well.", LogTextColor.CYAN);
     }
