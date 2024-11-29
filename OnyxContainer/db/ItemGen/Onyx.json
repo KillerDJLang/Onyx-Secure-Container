@@ -1,0 +1,94 @@
+{
+    "674a33573fef1c2943025680": {
+        "ItemToClone": "SECURE_KAPPA",
+        "OverrideProperties": {
+            "Prefab": {
+                "path": "assets/content/items/containers/RopesContainer.bundle",
+                "rcid": ""
+            },
+            "Grids": [
+                {
+                    "_id": "674a335f61bf624d8b69274d",
+                    "_name": "GridView (1)",
+                    "_parent": "674a33573fef1c2943025680",
+                    "_props": {
+                        "cellsH": 2,
+                        "cellsV": 4,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5447e1d04bdc2dff2f8b4567"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                },
+                {
+                    "_id": "674a336198c9ab1faa67d5e5",
+                    "_name": "GridView (2)",
+                    "_parent": "674a33573fef1c2943025680",
+                    "_props": {
+                        "cellsH": 3,
+                        "cellsV": 5,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5447e1d04bdc2dff2f8b4567"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                },
+                {
+                    "_id": "674a33690450ca2407524742",
+                    "_name": "GridView (3)",
+                    "_parent": "674a33573fef1c2943025680",
+                    "_props": {
+                        "cellsH": 1,
+                        "cellsV": 3,
+                        "filters": [
+                            {
+                                "ExcludedFilter": ["5447e1d04bdc2dff2f8b4567"],
+                                "Filter": ["54009119af1c881c07000029"]
+                            }
+                        ],
+                        "isSortingTable": false,
+                        "maxCount": 0,
+                        "maxWeight": 0,
+                        "minCount": 0
+                    },
+                    "_proto": "55d329c24bdc2d892f8b4567"
+                }
+            ]
+        },
+        "LocalePush": {
+            "en": {
+                "name": "Secure Container Onyx",
+                "shortName": "OnyxSC",
+                "description": "The best of the best. The rarest case found in the land of Tarkov, used by only the most skilled and seasoned PMC's."
+            }
+        },
+        "Handbook": {
+            "HandbookParent": "SecureContainers",
+            "HandbookPrice": 12999999
+        },
+        "AddToTrader": {
+            "TraderId": "Saria",
+            "Currency": "Rub",
+            "LoyaltyLevel": 2,
+            "Cost": 2000000,
+            "UnlimitedCount": false,
+            "StackObjectsCount": 1
+        },
+        "CloneToFilters": true,
+        "PushToFleaBlacklist": true
+    }
+}

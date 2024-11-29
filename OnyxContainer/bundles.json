@@ -1,0 +1,8 @@
+{
+    "manifest": [
+        {
+            "key": "assets/content/items/containers/RopesContainer.bundle",
+            "dependencyKeys": ["assets/commonassets/physics/physicsmaterials.bundle", "cubemaps", "shaders"]
+        }
+    ]
+}

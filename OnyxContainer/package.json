@@ -1,0 +1,35 @@
+{
+    "name": "OnyxContainer",
+    "version": "1.4.0",
+    "author": "Roze And DJ",
+    "license": "MIT",
+    "main": "src/mod.js",
+    "sptVersion": "~3.10",
+    "isBundleMod": true,
+    "loadBefore": [],
+    "loadAfter": ["SariaShop"],
+    "incompatibilities": [],
+    "contributors": [],
+    "scripts": {
+        "setup": "npm i",
+        "build": "node ./build.mjs",
+        "buildinfo": "node ./build.mjs --verbose",
+        "format": "npx @biomejs/biome check --write ./"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "1.8.3",
+        "@types/node": "20.11",
+        "@typescript-eslint/eslint-plugin": "7.2",
+        "@typescript-eslint/parser": "7.2",
+        "archiver": "^6.0",
+        "eslint": "8.57",
+        "fs-extra": "11.2",
+        "ignore": "^5.2",
+        "os": "^0.1",
+        "tsyringe": "4.8.0",
+        "typescript": "5.4",
+        "winston": "3.12",
+        "json5": "2.2.3"
+    },
+    "dependencies": {}
+}
