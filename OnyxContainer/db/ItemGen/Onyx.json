@@ -3,7 +3,7 @@
         "ItemToClone": "SECURE_KAPPA",
         "OverrideProperties": {
             "Prefab": {
-                "path": "assets/content/items/containers/RopesContainer.bundle",
+                "path": "assets/content/items/containers/onyx_container.bundle",
                 "rcid": ""
             },
             "Grids": [

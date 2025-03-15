@@ -1,8 +1,8 @@
-import { DependencyContainer } from "tsyringe";
+import type { DependencyContainer } from "tsyringe";
 
-import { PreSptModLoader } from "@spt/loaders/PreSptModLoader";
-import { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
-import { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
+import type { PreSptModLoader } from "@spt/loaders/PreSptModLoader";
+import type { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
+import type { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
 
 import { ItemGenerator } from "./CustomItems/ItemGenerator";
@@ -31,9 +31,10 @@ class OnyxContainer implements IPreSptLoadMod, IPostDBLoadMod {
         this.ref.postDBLoad(container);
 
         if (!OnyxContainer.DepCheck(this.ref.preSptModLoader)) {
-            return this.logger.logError(
+            this.logger.logError(
                 "Error, missing dependancy Saria Shop.\nMake sure you have installed this mod and it's dependancy correctly.",
             );
+            return;
         }
 
         const itemGenerator = new ItemGenerator(this.ref);

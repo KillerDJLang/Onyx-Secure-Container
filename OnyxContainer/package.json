@@ -1,10 +1,10 @@
 {
     "name": "OnyxContainer",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "author": "Roze And DJ",
     "license": "MIT",
     "main": "src/mod.js",
-    "sptVersion": "~3.10",
+    "sptVersion": "~3.11",
     "isBundleMod": true,
     "loadBefore": [],
     "loadAfter": ["SariaShop"],

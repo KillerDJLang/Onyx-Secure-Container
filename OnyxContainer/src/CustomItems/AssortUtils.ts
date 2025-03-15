@@ -5,7 +5,7 @@ import type {
 } from "@spt/models/eft/common/tables/ITrader";
 import type { ILogger } from "@spt/models/spt/utils/ILogger";
 import type { HashUtil } from "@spt/utils/HashUtil";
-import { Money } from "@spt/models/enums/Money";
+import type { Money } from "@spt/models/enums/Money";
 
     export class AssortUtils {
       
